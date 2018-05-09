@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20180509162241) do
   create_table "repositories", force: :cascade do |t|
     t.string  "name"
     t.integer "owner_id"
-    t.integer "lang_id"
+    t.integer "language_id"
     t.string  "description"
     t.integer "forks"
     t.integer "watchers"
