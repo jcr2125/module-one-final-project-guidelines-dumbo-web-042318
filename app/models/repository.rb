@@ -9,6 +9,16 @@ class Repository < ActiveRecord::Base
     ActiveRecord::Base.connection.execute(sql)[0]["name"]
   end
 
-  def self.
+  def self.descriptions
+    sql = "SELECT name, description FROM repositories"
+    content = ActiveRecord::Base.connection.execute(sql)
+    content.each do |repo|
+      puts "Title: #{repo["name"]}"
+      puts "Description: #{repo["description"]}"
+      puts "**************"
+    end
+    puts "**********"
+  end
+  
 
 end
