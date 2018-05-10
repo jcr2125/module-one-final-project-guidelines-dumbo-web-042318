@@ -37,4 +37,8 @@ class Repository < ActiveRecord::Base
     Repository.order('watchers DESC').first.name
   end
 
+  def self.most_forked
+    Repository.order('forks DESC').first.name
+  end
+
 end
