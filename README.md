@@ -15,8 +15,9 @@ Authentication for Github API because of limits
 
 
 Features
+  Refactor seed file
   change search query for github
   change search method to use regexp
-
+  search titles as well
   Check for multiple pages of contributors
-  Refactor seed file
+  Print out language as its meant to be printed

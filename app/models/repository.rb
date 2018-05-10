@@ -6,7 +6,7 @@ class Repository < ActiveRecord::Base
 
   def self.most_popular_language
     sql = "SELECT languages.name, COUNT(language_id) FROM repositories INNER JOIN languages ON repositories.language_id = languages.id GROUP BY language_id ORDER BY COUNT(language_id) DESC LIMIT 1"
-    ActiveRecord::Base.connection.execute(sql)[0]["name"]
+    puts ActiveRecord::Base.connection.execute(sql)[0]["name"]
   end
 
   def self.descriptions
@@ -34,11 +34,11 @@ class Repository < ActiveRecord::Base
   end
 
   def self.most_watched
-    Repository.order('watchers DESC').first.name
+    puts Repository.order('watchers DESC').first.name
   end
 
   def self.most_forked
-    Repository.order('forks DESC').first.name
+    puts Repository.order('forks DESC').first.name
   end
 
 end

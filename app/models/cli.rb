@@ -19,9 +19,10 @@ class CLI
   end
 
   def menu_selection(num)
-    case num
+    int = num.to_i
+    case int
     when 1
-      Respository.most_popular_language
+      Repository.most_popular_language
     when 2
       Repository.descriptions
     when 3
