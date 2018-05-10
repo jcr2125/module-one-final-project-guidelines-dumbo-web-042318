@@ -33,4 +33,8 @@ class Repository < ActiveRecord::Base
     puts "**********"
   end
 
+  def self.most_watched
+    Repository.order('watchers DESC').first.name
+  end
+
 end
