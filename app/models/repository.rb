@@ -19,6 +19,18 @@ class Repository < ActiveRecord::Base
     end
     puts "**********"
   end
-  
+
+  def self.search_descriptions(term)
+    sql = "SELECT name, description FROM repositories"
+    content = ActiveRecord::Base.connection.execute(sql)
+    content.select do |repo|
+      repo["description"].downcase.include?(term.downcase)
+    end.each do |repo|
+      puts "Title: #{repo["name"]}"
+      puts "Description: #{repo["description"]}"
+      puts "**************"
+    end
+    puts "**********"
+  end
 
 end
