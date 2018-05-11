@@ -3,6 +3,11 @@ class CLI
     puts "Welcome TOO OOP Srchr! Get the latest information on GitHubs top OOP repositories."
   end
 
+  def self.nicely_clear_terminal
+   puts "\n" * 200
+   puts `clear`
+ end
+
   def menu
     puts "Please enter the number of the menu option that you'd like to select."
     puts "1. Most popular language for OOP repositories."
